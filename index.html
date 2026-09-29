@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#161d39">
+  <title>Sentence Hero | 초등 영어 4학년</title>
+  <link rel="stylesheet" href="styles.css?v=2">
+  <script src="game.js?v=2" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">✦</span><div><strong>Sentence Hero</strong><small>영어 문장으로 성장하는 용사</small></div></div>
+      <div class="top-actions"><span id="saveStatus" class="save-status">이 기기에 진도 저장</span><button id="resetButton" class="text-button" type="button">처음부터</button></div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="pageTitle">
+        <div><p class="eyebrow">초등 영어 4학년 · 11개 단원</p><h1 id="pageTitle">한 문장씩 읽고,<br><em>용사를 키워요!</em></h1><p>문장 뜻을 고르고, 빈칸을 채우고, 그림과 어울리는 문장을 찾아보세요.</p></div>
+        <div class="intro-score"><span>모은 별</span><strong><span id="starCount">0</span> ✦</strong><small id="completionCount">완료한 단원 0 / 11</small></div>
+      </section>
+
+      <div class="layout">
+        <aside class="side-panel" aria-label="단원 선택">
+          <div class="panel-heading"><div><p class="eyebrow">학습 지도</p><h2>단원 선택</h2></div><span id="unlockedCount" class="small-pill">1단원 열림</span></div>
+          <div id="unitList" class="unit-list"></div>
+        </aside>
+
+        <div class="play-column">
+          <section class="battle-panel" aria-label="용사와 몬스터 전투">
+            <div class="battle-heading"><div><p class="eyebrow">현재 모험</p><h2 id="unitTitle">1. How Are You?</h2></div><span id="battleStep" class="small-pill">연습 1 / 10</span></div>
+            <div class="battle-scene"><div class="character"><span class="character-art" aria-hidden="true">🧙‍♀️</span><strong>문장 용사</strong></div><div class="battle-center"><span>정답을 맞히면 공격!</span><div class="battle-spark" aria-hidden="true">⚔</div><span id="monsterLabel">문장 몬스터</span></div><div class="character"><span id="monsterArt" class="character-art monster" aria-hidden="true">👾</span><strong>문장 몬스터</strong></div></div>
+            <div class="health-row"><span>몬스터 체력</span><div class="health-track"><div id="healthFill" class="health-fill"></div></div><strong id="healthText">100 / 100</strong></div>
+          </section>
+
+          <section class="quiz-panel" aria-labelledby="questionHeading">
+            <div class="quiz-top"><div><p id="questionType" class="eyebrow">문장 의미 선택</p><h2 id="questionHeading">문제를 불러오는 중...</h2></div><button id="listenButton" class="listen-button" type="button" aria-label="영어 문장 듣기">🔊 <span>듣기</span></button></div>
+            <div class="progress-track" aria-label="단원 학습 진도"><div id="learningProgress" class="progress-fill"></div></div>
+            <div id="pictureWrap" class="picture-wrap" hidden></div>
+            <p id="questionHint" class="question-hint"></p>
+            <p id="questionText" class="question-text" lang="en"></p>
+            <div id="answerArea" class="answer-area"></div>
+            <div id="feedback" class="feedback" role="status" aria-live="polite" hidden></div>
+            <button id="nextButton" class="primary-button" type="button" hidden>다음 문제 →</button>
+            <p class="question-footnote">정답을 틀려도 괜찮아요. 설명을 읽고 다시 도전하세요.</p>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer>각 문장은 초등 영어 4학년 지도서의 단원 표현을 바탕으로 새로 구성했습니다. 학습 진도는 현재 브라우저에 저장됩니다.</footer>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
